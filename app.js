@@ -2,13 +2,13 @@ const express = require('express');
 const mustacheEx = require('mustache-express');
 
 const app = express();
-const router = require('./routes/routes')
+const router = require('./routes/routes');
 const mustacheExInstance = mustacheEx();
 mustacheExInstance.cache = null;
 app.engine('mustache', mustacheExInstance);
 
 app.set('view engine', 'mustache');
-app.set('view', __dirname + '/views');
+app.set('views', __dirname + '/views');
 
 app.use(express.static('public'));
 

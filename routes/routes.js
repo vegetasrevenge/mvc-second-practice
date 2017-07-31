@@ -1,17 +1,21 @@
 const express = require('express');
 const router = express.Router();
-const planets = require('../models/planets');
+const players = require('../models/players');
 
 router.get('/', function(req, res){
-  res.render--
+  res.render('homePage')
 });
 
-router.get('/pagetwo', function(req, res){
-  res.render--
+router.get('/teams', function(req, res){
+  res.render('teams', {players: players.all});
 });
 
-router.get('/pagethree', function(req, res){
-  res.render--
+router.get('/eastern', function(req, res){
+  res.render('eastern', {players: players.filter('e')});
+});
+
+router.get('/western', function(req, res){
+  res.render('western', {players: players.filter('w')});
 });
 
 module.exports = router;
